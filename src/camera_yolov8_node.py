@@ -19,8 +19,8 @@ class CameraYOLOv8Node():
         YOLOv8l 	640 	52.9 	375.2 	2.39 	43.7 	165.2
         YOLOv8x 	640 	53.9 	479.1 	3.53 	68.2 	257.8
         """
-        # self.model_name = "yolov8n.pt"  # for 6 cameras and other neural nets
-        self.model_name = "yolov8m.pt"  # for 2 or 6 cameras
+        self.model_name = "yolov8n.pt"  # for 6 cameras and other neural nets
+        # self.model_name = "yolov8m.pt"  # for 2 or 6 cameras
 
         self.output_image = True    # optional output image
         self.color = (0, 255, 0)    # label text color
@@ -30,7 +30,8 @@ class CameraYOLOv8Node():
         # we have separate publishefrombufferr and subscriber for each camera
         # that reuse the same callback funciton.
         self.topic_list = [
-            '/camera_8/compressed',
+            '/camera/color/image_raw/compressed',
+            #'/camera_8/compressed',
             # '/camera_0/compressed',
             # '/camera_1/compressed',
             # '/camera_10/compressed',
